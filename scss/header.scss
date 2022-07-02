@@ -1,3 +1,581 @@
 .header {
-  background-color: #222;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: $--bg-color;
+  box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.5);
+  &__container {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    min-height: 70px;
+  }
+  &__logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    w img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      z-index: 5;
+    }
+    p {
+      margin-left: 10px;
+      align-items: center;
+      font-size: 24px;
+      font-weight: 600;
+      text-decoration: none;
+      font-family: Quicksand;
+
+      color: $--primary-color;
+    }
+  }
+  &__search {
+    margin-left: 20px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 700px;
+
+    z-index: 5;
+  }
+}
+
+// Стилизация поисковика
+.search {
+  &__bar {
+    border: none;
+    form {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__filter {
+    position: absolute;
+    top: 44px;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: $--bg-secondary-color;
+
+    width: 100%;
+    height: auto;
+
+    z-index: 1;
+
+    &.open {
+      display: flex;
+    }
+  }
+
+  &__btn {
+    padding: 10px;
+
+    font-size: 18px;
+    background-color: $--bg-secondary-color;
+    color: $--primary-text-color;
+    border: none;
+
+    width: 10%;
+
+    transition: 0.4s background-color linear;
+
+    &:hover {
+      background-color: transparentize($--primary-color, 0.2);
+      transition: 0.4s background-color linear;
+    }
+
+    &.filter {
+      border-right: 1px solid rgba(136, 136, 136, 0.2);
+    }
+
+    &._active {
+      background-color: transparentize($--primary-color, 0.2);
+    }
+  }
+
+  &__line {
+    padding: 10px;
+
+    font-size: 18px;
+    color: $--primary-text-color;
+    background-color: $--bg-secondary-color;
+    border: none;
+
+    width: 90%;
+    &::placeholder {
+      color: $--third-text-color;
+    }
+  }
+}
+
+// Стилизация карты с фильтрами
+.filter {
+  &__wrap {
+    margin: 0 auto;
+    padding: 20px;
+
+    width: 100%;
+  }
+
+  &__item {
+    padding: 20px 0 0 0;
+
+    &.age {
+      padding: 40px 20px;
+    }
+
+    // Стилизация Select
+    & .select {
+      position: relative;
+
+      &.open {
+        .select__dropdown {
+          display: block;
+        }
+      }
+
+      &__input {
+        padding: 0 5px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        font-size: 16px;
+        color: $--primary-text-color;
+        background-color: $--bg-color;
+        cursor: pointer;
+
+        width: 100%;
+        height: 40px;
+
+        z-index: 10;
+
+        & .selected-item__list {
+          margin-right: 10px;
+          overflow-y: hidden;
+          overflow-x: hidden;
+
+          white-space: nowrap;
+
+          span {
+            padding: 3px 0;
+
+            display: inline-block;
+          }
+          span.select-handle {
+            margin: 0 2px;
+            padding: 3px 10px 3px 10px;
+
+            display: inline-block;
+
+            background-color: transparentize($--primary-color, 0.2);
+            border-radius: 5px;
+          }
+        }
+      }
+
+      &__dropdown {
+        margin-top: 1px;
+
+        display: none;
+        position: absolute;
+
+        font-size: 16px;
+        background-color: $--bg-color;
+
+        width: 100%;
+        max-height: 200px;
+
+        overflow-y: auto;
+
+        z-index: 10;
+      }
+
+      &__item {
+        padding: 10px;
+
+        display: flex;
+
+        color: $--primary-text-color;
+        cursor: pointer;
+
+        transition: 0.2s background-color linear;
+
+        &.select-handle {
+          i {
+            color: $--primary-color;
+
+            transition: 0.2s color linear;
+
+            animation: bounce 1s ease;
+          }
+        }
+
+        &:hover {
+          background-color: transparentize($--primary-color, 0.2);
+
+          transition: 0.4s background-color linear;
+        }
+
+        i {
+          margin-right: 10px;
+
+          color: $--bg-secondary-color;
+
+          transition: 0.2s color linear;
+        }
+      }
+    }
+  }
+
+  &__title {
+    margin: 10px 0;
+
+    color: $--primary-text-color;
+    font-size: 18px;
+  }
+}
+
+// Стилизация ползунка
+.noUi-horizontal {
+  height: 8px;
+}
+
+.noUi-connect {
+  background-color: $--primary-color;
+}
+
+.noUi-tooltip {
+  font-size: 12px;
+}
+
+.noUi-value-horizontal {
+  transform: translate(-50%, 100%);
+}
+
+.noUi-pips-horizontal {
+  padding: 10px 0;
+  height: auto;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.noUi-handle.noUi-handle-lower,
+.noUi-handle.noUi-handle-upper {
+  width: 20px;
+  height: 20px;
+
+  top: -6.5px;
+
+  transform: translateX(-10px);
+}
+
+.noUi-marker-horizontal.noUi-marker {
+  margin-left: -1px;
+  width: 2px;
+  height: 5px;
+}
+
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+
+.noUi-handle::after {
+  display: none;
+}
+
+.noUi-handle::before {
+  display: none;
+}
+
+.noUi-value-sub {
+  display: none;
+}
+
+// Стилизация иконки меню и его тела
+.menu {
+  &__icon {
+    display: none;
+  }
+  &__list > li {
+    position: relative;
+    margin: 0px 0px 0px 20px;
+  }
+  &__link {
+    color: $--primary-text-color;
+    font-size: 18px;
+    transition: all 0.5s linear;
+    &:hover {
+      color: $--primary-color;
+      text-shadow: 0 0 15px $--primary-color;
+      font-weight: 500;
+
+      transition: all 0.5s linear;
+    }
+  }
+  &__sub-list {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: $--bg-secondary-color;
+    padding: 15px;
+    min-width: 200px;
+    z-index: 1;
+    > li {
+      margin: 0px 0px 10px 0px;
+    }
+  }
+  &__arrow {
+    display: none;
+  }
+  &__sub-link {
+    color: $--primary-text-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Адаптивная стилизация для телефонов
+body._pc .menu__list > li:hover .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+body._touch .menu__list > li {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__arrow {
+  width: 0;
+  height: 0;
+  margin: 0px 0px 0px 5px;
+  display: block;
+  transition: transform 0.3s ease 0s;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+body._touch .menu__link {
+  flex: 1 1 auto;
+}
+
+body._touch .menu__list > li._active .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+body._touch .menu__list > li._active .menu__arrow {
+  transform: rotate(180deg);
+}
+
+// Адаптив шапки
+@media (min-width: 767px) {
+  .search__bar input {
+    width: 90%;
+  }
+
+  .search__bar button {
+    width: 10%;
+  }
+
+  .menu__list {
+    display: flex;
+    align-items: center;
+    > li {
+      padding: 15px 0;
+    }
+  }
+  .menu__sub-list {
+    transform: translateY(-10%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+  }
+}
+
+@media (max-width: 767px) {
+  .header__logo p {
+    display: none;
+  }
+
+  .search__bar input {
+    width: 80%;
+  }
+
+  .search__bar button {
+    width: 20%;
+  }
+
+  .search__filter {
+    position: absolute;
+    top: 44px;
+    left: 0;
+    width: 100%;
+  }
+
+  .menu__icon {
+    margin-left: 20px;
+
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .menu__icon._active span {
+    transform: translate(0px, -50%) scale(0);
+  }
+
+  .menu__icon._active::before {
+    top: 50%;
+    transform: translate(0px, -50%) rotate(-45deg);
+    background-color: $--primary-color;
+    box-shadow: 0 0 15px 1px $--primary-color;
+  }
+
+  .menu__icon._active::after {
+    bottom: 50%;
+    transform: translate(0px, 50%) rotate(45deg);
+    background-color: $--primary-color;
+    box-shadow: 0 0 15px 1px $--primary-color;
+  }
+
+  .menu__icon span,
+  .menu__icon::before,
+  .menu__icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 25px;
+    transition: all 0.3s ease 0s;
+    background-color: $--primary-text-color;
+  }
+
+  .menu__icon::before,
+  .menu__icon::after {
+    content: '';
+  }
+
+  .menu__icon::before {
+    top: 0;
+  }
+
+  .menu__icon::after {
+    bottom: 0;
+  }
+
+  .menu__icon span {
+    top: 50%;
+    transform: translate(0px, -50%) scale(1);
+  }
+
+  .menu__body {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: $--bg-secondary-color;
+    padding: 30px 30px 30px 30px;
+    transition: top 0.3s ease 0s;
+    overflow: auto;
+  }
+
+  .menu__body._active {
+    display: block;
+  }
+
+  .menu__body::before {
+    content: '';
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: $--bg-secondary-color;
+    z-index: 2;
+  }
+
+  .menu__list > li {
+    flex-wrap: wrap;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .menu__list > li:last-child {
+    margin: 0px 0px 0px 0px;
+  }
+
+  .menu__link {
+    font-size: 25px;
+  }
+
+  .menu__sub-list {
+    position: relative;
+    background-color: rgb(43, 50, 71);
+    flex: 1 1 100%;
+    margin: 20px 0px 0px 0px;
+    display: none;
+  }
+
+  .menu__list > li._active .menu__sub-list {
+    display: block;
+  }
+
+  .menu__sub-link {
+    font-size: 20px;
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      transition: all 0.5s ease 0s;
+      text-shadow: 0 0 20px rgb(255, 255, 255);
+      font-weight: 500;
+    }
+  }
+}
+
+// Анимации
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
 }

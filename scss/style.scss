@@ -1,2 +1,17 @@
+@import './variables.scss';
 @import './reset.scss';
 @import './header.scss';
+
+@import './font.scss';
+$--default-font: Quicksand;
+
+$minWidth: 320px;
+$maxWidth: 1920px;
+$maxWidthContainer: 1113px;
+$w1: 991px;
+$w2: 767px;
+$w3: 480px;
+
+body {
+  font-family: $--default-font;
+}

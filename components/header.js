@@ -1,8 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import logo from '../assets/images/header/logo.png'
-
 export function Header({}) {
   return (
     <>
@@ -10,7 +8,13 @@ export function Header({}) {
         <div className='header__container'>
           <Link href='#'>
             <a className='header__logo'>
-              <Image src={logo} height={'30px'} width={'30px'} alt='Logo' />
+              <Image
+                className='logo-item'
+                src='../public/logoss.png'
+                height={'50px'}
+                width={'50px'}
+                alt=''
+              />
               <p>Aniwatch</p>
             </a>
           </Link>
@@ -77,17 +81,17 @@ export function Header({}) {
                 </li>
                 <li>
                   <Link href=''>
-                    <a className='menu__link'>Home</a>
+                    <a className='menu__link'>Top anime</a>
                   </Link>
                 </li>
                 <li>
                   <Link href=''>
-                    <a className='menu__link'>Home</a>
+                    <a className='menu__link'>Your anime</a>
                   </Link>
                 </li>
                 <li>
                   <Link href=''>
-                    <a className='menu__link'>Home</a>
+                    <a className='menu__link'>Profile</a>
                   </Link>
                 </li>
               </ul>
