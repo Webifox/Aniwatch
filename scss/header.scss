@@ -1,19 +1,18 @@
 .header {
   position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10;
+
+  color: $--primary-text-color;
   background-color: $--bg-color;
-  box-shadow: 0px 10px 30px 5px rgba(0, 0, 0, 0.5);
+
   &__container {
-    max-width: 100%;
-    margin: 0 auto;
+    padding: 10px 20px;
+
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 30px;
-    min-height: 70px;
+
+    max-width: 100%;
   }
   &__logo {
     display: flex;
@@ -21,42 +20,44 @@
     justify-content: center;
     align-items: center;
 
-    text-decoration: none;
-    w img {
-      width: 60px;
-      height: 60px;
+    img {
       border-radius: 50px;
+
+      min-width: 60px;
+      min-height: 60px;
+
       z-index: 5;
     }
     p {
       margin-left: 10px;
-      align-items: center;
-      font-size: 24px;
-      font-weight: 600;
-      text-decoration: none;
-      font-family: Quicksand;
 
-      color: $--primary-color;
+      display: flex;
+      flex-direction: column;
+      line-height: 20px;
+
+      color: $--secondary-color;
+
+      & .logo-name {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      & .logo-subname {
+        font-size: 16px;
+        color: $--third-text-color;
+      }
     }
   }
   &__search {
-    margin-left: 20px;
-
     position: relative;
 
-    display: flex;
-    flex-direction: column;
-
-    width: 700px;
-
-    z-index: 5;
+    width: 50%;
   }
 }
 
 // Стилизация поисковика
 .search {
   &__bar {
-    border: none;
     form {
       display: flex;
       flex-direction: row;
@@ -66,8 +67,10 @@
   }
 
   &__filter {
+    padding: 20px;
+
     position: absolute;
-    top: 44px;
+    top: 42.5px;
 
     display: none;
     flex-direction: column;
@@ -91,9 +94,8 @@
     font-size: 18px;
     background-color: $--bg-secondary-color;
     color: $--primary-text-color;
-    border: none;
 
-    width: 10%;
+    flex: 10%;
 
     transition: 0.4s background-color linear;
 
@@ -111,15 +113,14 @@
     }
   }
 
-  &__line {
+  &__input {
     padding: 10px;
 
     font-size: 18px;
     color: $--primary-text-color;
     background-color: $--bg-secondary-color;
-    border: none;
 
-    width: 90%;
+    flex: 90%;
     &::placeholder {
       color: $--third-text-color;
     }
@@ -130,16 +131,18 @@
 .filter {
   &__wrap {
     margin: 0 auto;
-    padding: 20px;
 
-    width: 100%;
+    min-width: 100%;
   }
 
   &__item {
     padding: 20px 0 0 0;
 
+    width: 100%;
+
     &.age {
-      padding: 40px 20px;
+      color: $--third-text-color;
+      text-align: center;
     }
 
     // Стилизация Select
@@ -164,15 +167,13 @@
         background-color: $--bg-color;
         cursor: pointer;
 
-        width: 100%;
         height: 40px;
 
         z-index: 10;
 
         & .selected-item__list {
           margin-right: 10px;
-          overflow-y: hidden;
-          overflow-x: hidden;
+          overflow-x: scroll;
 
           white-space: nowrap;
 
@@ -506,9 +507,12 @@ body._touch .menu__list > li._active .menu__arrow {
     left: 0;
     width: 100%;
     background-color: $--bg-secondary-color;
-    padding: 30px 30px 30px 30px;
     transition: top 0.3s ease 0s;
     overflow: auto;
+  }
+
+  .menu__body > ul {
+    padding: 30px 30px;
   }
 
   .menu__body._active {
@@ -517,13 +521,13 @@ body._touch .menu__list > li._active .menu__arrow {
 
   .menu__body::before {
     content: '';
-    position: sticky;
+    position: static;
     top: 0;
     left: 0;
     height: 70px;
     width: 100%;
     background-color: $--bg-secondary-color;
-    z-index: 2;
+    z-index: 0;
   }
 
   .menu__list > li {

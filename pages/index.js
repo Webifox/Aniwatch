@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { MainLayot } from '../components/mainLayot'
 
 export default function Home() {

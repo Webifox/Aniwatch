@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFilter, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 export function Header({}) {
   return (
@@ -10,12 +12,18 @@ export function Header({}) {
             <a className='header__logo'>
               <Image
                 className='logo-item'
-                src='../public/logoss.png'
+                src={'/assets/images/header/logoss.png'}
                 height={'50px'}
                 width={'50px'}
-                alt=''
+                alt='Logo'
+                layout='fixed'
+                quality='100'
+                priority='true'
               />
-              <p>Aniwatch</p>
+              <p>
+                <span className='logo-name'>Aniwatch</span>
+                <span className='logo-subname'>Look with comfort!</span>
+              </p>
             </a>
           </Link>
           <div className='header__search'>
@@ -26,7 +34,7 @@ export function Header({}) {
                   type='button'
                   formEncType='text/plain'
                 >
-                  <i className='fa-solid fa-sliders'></i>
+                  <FontAwesomeIcon icon={faFilter} />
                 </button>
                 <button
                   className='search__btn search-btn'
@@ -34,10 +42,10 @@ export function Header({}) {
                   formEncType='text/plain'
                   form='anime-get'
                 >
-                  <i className='fa-solid fa-magnifying-glass'></i>
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
                 <input
-                  className='search__line'
+                  className='search__input'
                   type='text'
                   placeholder='Find what you want'
                   form='anime-get'
@@ -47,7 +55,7 @@ export function Header({}) {
             <div className='search__filter'>
               <div className='filter__wrap'>
                 <div className='filter__item age'>
-                  <div id='slider'></div>
+                  <p>There should be a years filter here</p>
                 </div>
                 <div className='filter__item genre'>
                   <p className='filter__title'>Genres</p>

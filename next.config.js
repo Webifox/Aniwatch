@@ -4,7 +4,7 @@ const nextConfig = {
 
   images: {
     loader: 'imgix',
-    path: 'https://localhost:3000/',
+    path: 'http://localhost:3000/',
   },
 }
 

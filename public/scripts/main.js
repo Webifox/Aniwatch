@@ -1,5 +1,6 @@
-import { Selecter } from './SelecterPlugin.js'
-import './burger'
+import Selecter from './SelecterPlugin.js'
+import './burger.js'
+
 // Открытие карты фильтров
 const filterBtn = document.querySelector('.search__btn')
 const filteCard = document.querySelector('.search__filter')

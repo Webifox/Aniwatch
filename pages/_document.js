@@ -8,8 +8,17 @@ export default class MyDocument extends Document {
         <Head></Head>
         <body>
           <Main />
+          <Script
+            src='https://kit.fontawesome.com/d271021df5.js'
+            crossorigin='anonymous'
+            strategy='beforeInteractive'
+          />
+          <Script
+            src='/scripts/main.js'
+            strategy='afterInteractive'
+            type='module'
+          />
           <NextScript />
-          <Script src='../javascripts/main.js' />
         </body>
       </Html>
     )
