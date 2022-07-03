@@ -1,8 +1,13 @@
+import Head from 'next/head'
 import { MainLayot } from '../components/mainLayot'
+import { ShowBgBtn } from './../components/Button.show-background'
 
-export default function Home() {
+export default function HomePage() {
   return (
     <MainLayot>
+      <Head>
+        <title>Aniwatch</title>
+      </Head>
       <main>
         <section>
           <div className='container'>
@@ -10,6 +15,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <ShowBgBtn />
     </MainLayot>
   )
 }

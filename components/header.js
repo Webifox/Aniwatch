@@ -28,7 +28,7 @@ export function Header({}) {
           </Link>
           <div className='header__search'>
             <div className='search__bar'>
-              <form action='' method='post' name='anime-get'>
+              <form action='/' method='post' id='anime-get'>
                 <button
                   className='search__btn filter'
                   type='button'
@@ -38,15 +38,14 @@ export function Header({}) {
                 </button>
                 <button
                   className='search__btn search-btn'
-                  type='submit'
-                  formEncType='text/plain'
+                  // formEncType='text/plain'
                   form='anime-get'
                 >
                   <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
                 <input
                   className='search__input'
-                  type='text'
+                  type='search'
                   placeholder='Find what you want'
                   form='anime-get'
                 />

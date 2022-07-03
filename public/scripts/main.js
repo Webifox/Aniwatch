@@ -83,3 +83,11 @@ const SelectLimit = new Selecter('#selectLimit', {
     { id: '5', value: 'NC-17' },
   ],
 })
+
+// Show bg
+
+const showBtn = document.getElementById('show-background')
+
+showBtn.addEventListener('click', () => {
+  document.body.classList.toggle('_hide')
+})

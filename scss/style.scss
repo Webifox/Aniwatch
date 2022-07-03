@@ -1,6 +1,7 @@
 @import './variables.scss';
 @import './reset.scss';
 @import './header.scss';
+@import './footer.scss';
 
 @import './font.scss';
 $--default-font: Quicksand;
@@ -12,6 +13,53 @@ $w1: 991px;
 $w2: 767px;
 $w3: 480px;
 
+header,
+main,
+footer {
+  transition: all 0.3s linear;
+}
+
+body._pc button#show-background {
+  padding: 20px;
+
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 24px;
+  color: $--primary-text-color;
+  background-color: $--third-text-color;
+
+  transition: all 0.3s linear;
+
+  border-radius: 50%;
+}
+
+body._touch button#show-background {
+  display: none;
+}
+
 body {
+  display: block;
   font-family: $--default-font;
+
+  background: url(../public/assets/images/background/bg.jpg) no-repeat;
+  background-size: cover;
+
+  &._hide {
+    header,
+    main,
+    footer {
+      transition: all 0.3s linear;
+      opacity: 0;
+    }
+
+    button#show-background {
+      background-color: $--primary-color;
+    }
+  }
 }
