@@ -53,7 +53,7 @@ export function Header({}) {
             </div>
             <div className='search__filter'>
               <div className='filter__wrap'>
-                <div className='filter__item age'>
+                <div className='filter__item age error-block'>
                   <p>There should be a years filter here</p>
                 </div>
                 <div className='filter__item genre'>

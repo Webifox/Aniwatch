@@ -18,6 +18,17 @@ export default class MyDocument extends Document {
             strategy='afterInteractive'
             type='module'
           />
+          <Script
+            src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'
+            strategy='afterInteractive'
+            type='module'
+          />
+          <Script
+            src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'
+            strategy='afterInteractive'
+            type='module'
+          />
+
           <NextScript />
         </body>
       </Html>
