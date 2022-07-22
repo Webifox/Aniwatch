@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
         <Head />
         <body>
           <Main />
+          <NextScript />
           <Script
             src='https://kit.fontawesome.com/d271021df5.js'
             crossorigin='anonymous'
@@ -25,11 +26,9 @@ export default class MyDocument extends Document {
           />
           <Script
             src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js'
-            strategy='afterInteractive'
+            strategy='beforeInteractive'
             type='module'
           />
-
-          <NextScript />
         </body>
       </Html>
     )

@@ -1,0 +1,20 @@
+[
+   {
+      "src": "/assets/images/anime-anonce/harataku-maou-sama-s2.webp",
+      "title": "Hataraku Maou-sama!!",
+      "description": "Sadao Maou returns for more shifts, now having to take care of a small girl born from a golden apple!",
+      "genres": ["Comed", "Demons", "Fantasy"]
+   },
+   {
+      "src": "/assets/images/anime-anonce/overlordIV.jpg",
+      "title": "Overlord IV",
+      "description": "The fourth season of Overlord.",
+      "genres": ["Action", "Adventure", "Fantasy"]
+   },
+   {
+      "src": "/assets/images/anime-anonce/saikin-yatotta-maid-ga-ayashii.jpg",
+      "title": "Saikin Yatotta Maid ga Ayashii",
+      "description": "There’s something really strange about the maid I just hired! No normal person could be so beautiful, or cook such amazingly delicious food, or know exactly what I want before I even ask. She must be using magic—right, a spell is the only thing that can explain why my chest feels so tight whenever I look at her. I swear, I’m going to get to the bottom of what makes this maid so...mysterious!",
+      "genres": ["Comedy", "Romance", "Slice of Life"]
+   }
+]

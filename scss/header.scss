@@ -4,6 +4,8 @@
   color: $--primary-text-color;
   background-color: $--bg-color;
 
+  z-index: 99;
+
   &__container {
     padding: 0 25px;
 
@@ -79,8 +81,6 @@
 
     width: 100%;
     height: auto;
-
-    z-index: 1;
 
     &.open {
       display: block;
